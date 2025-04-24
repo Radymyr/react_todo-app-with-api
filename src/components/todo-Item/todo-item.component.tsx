@@ -66,9 +66,11 @@ export const TodoItemComponent: React.FC<TodoItemTypes> = ({
           setTodos(prevState => {
             const newState = [...prevState];
 
-            const index = prevState.findIndex(i => i.id === todoFromServer.id);
+            const startIndex = prevState.findIndex(
+              index => index.id === todoFromServer.id,
+            );
 
-            newState.splice(index, 1, newTodo);
+            newState.splice(startIndex, 1, newTodo);
 
             return newState;
           });
